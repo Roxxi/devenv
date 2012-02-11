@@ -3,15 +3,7 @@ export HADOOP_HOME=/usr/local/hadoop
 export DEFAULT_PATH=/usr/local/mysql/bin:/sw/bin:/opt/local/bin:/Library/Frameworks/Python.framework/Versions/2.6/bin:/usr/local/bin:/Applications/GridGain221/bin:/Applications/apache-maven-3.0.3/bin/:.:${PATH}:$HADOOP_HOME/bin
 
 
-
-
-# Setting PATH for MacPython 2.5
-# The orginal version is saved in .cshrc.pysave
-#set path=(/Library/Frameworks/Python.framework/Versions/Current/bin $path)
-
-# Setting PATH for MacPython 2.6
-# The orginal version is saved in .cshrc.pysave
-#set path=(/Library/Frameworks/Python.framework/Versions/2.6/bin $path)
+source ~/.zsh.d/mac.zsh
 
 # Editor settings
 alias gemacs='/Applications/Emacs.app/Contents/MacOS/Emacs'
@@ -46,6 +38,7 @@ export ANT_HOME=/opt/local/share/java/apache-ant
 #swap these lines when switching
 export PATH=$DEFAULT_PATH
 #source ~/.zsh.d/merced.zsh
+
 
 export TCGREP="-inH"
 
