@@ -1,0 +1,63 @@
+
+[Roxxi@Kouga ~] git init
+Initialized empty Git repository in /Users/Roxxi/.git/
+[Roxxi@Kouga ~] gitk
+This shows you what's going on in git
+
+use
+
+[Roxxi@Kouga ~] git add path/to/file to add those files
+
+[Roxxi@Kouga ~] git status to see what's pending
+
+=git commit= to submit changes
+
+now, if I change a file and do =git commit= it won't submit the changed file- because I wasn't explicit about wanting all my changes committed.
+
+There are two things I can do:
+either:
+ git add <file I modified> to mark it explictly to add it to the check in
+(it seems like "add" here doesn't mean add a new file to the repository, but rather, add it to the list of things git cares about right now. The thing you're actually adding it to is "the index" of the files for it to track. As such =git add= is an index command, not a repository command)
+
+or 
+do =git commit -a= which means commit all things that change.
+
+****
+
+now we go to our remote server, and fine a place we wanna stick this stuff.
+make a path
+then do =git init --bare=  This means that I'm creating all of the metadata that reflects the repository without actually generating the directory structure containing the files.  It doesn't mea the files aren't stored there- they're just not stored there in a friendly consumable form- rather as "objects" in git's format. 
+
+
+
+****
+
+back on our local server now, we're going to do 
+
+=git remote add <id> <path-to-repo>=
+
+where <id> ::= some identifier that we can use to name our
+repository, (in this case, "dreamhost")
+
+<path-to-repo> ::= ssh://remove-path-to-repo
+in this case ssh://ajbahouth@gravano.dreamhost.com/git/env/
+
+Now we want to push this crap
+=git push dreamhost <branch>=  <branch> by default is "master"
+
+any time after this that I want to share my changes, I do git push
+dreamhost master to push to the central branch.
+
+But right now, the dreamhost location isn't formally a central branch
+
+So let's make it formally central:
+
+=git branch --set-upstream local-branch-name dreamhost/<remote-branch-name>=
+=git branch --set-upstream master dreamhost/master=
+
+now I don't even have to specify where to push it to, I can just say
+push- it auto push to what I set as upstream.  You can only have one
+thing as upstream set at a time. So git push always pushes to
+upstream. git push location branch will push explicitly to that place
+
+
