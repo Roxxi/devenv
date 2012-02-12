@@ -68,6 +68,7 @@ If we want to update an existing directory (e.g. my home directory)
 
 git init
 git remote add dreamhost ssh://ajbahouth@gravano.dreamhost.com 
+git fetch dreamhost (this fetches the objects from the dreamhost remote)
 git pull dreamhost master
 
 but then... it didn't work! we had local copies!  
