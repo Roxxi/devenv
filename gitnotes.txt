@@ -61,3 +61,37 @@ thing as upstream set at a time. So git push always pushes to
 upstream. git push location branch will push explicitly to that place
 
 
+*****
+
+Now we go to the other computer.  There are two cases here:
+If we want to update an existing directory (e.g. my home directory)
+
+git init
+git remote add dreamhost ssh://ajbahouth@gravano.dreamhost.com 
+git pull dreamhost master
+
+but then... it didn't work! we had local copies!  
+Let's oblierate them the ol' fashion the rm -rf way!
+
+But now git things they're deleted D: !!
+
+So we do git reset --hard
+and git goes and fetches them from the remote location then
+
+(without --hard) we just revert the changes to the index (NOT any
+changes to files)  But if we do commit -a it'll submit all the changes
+anyway.
+
+git reset --hard really blows everything away for realz yo!
+
+
+-------
+
+
+Now, in the more common case, we'll want to check stuff out to a sub
+directory, so we'll do git clone
+
+git clone ssh://ajbahouth@blah.blah.blah/~/Path/to/place/
+
+and this will make a new directory named "place" with the contents of
+everything in here
