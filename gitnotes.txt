@@ -96,3 +96,19 @@ git clone ssh://ajbahouth@blah.blah.blah/~/Path/to/place/
 
 and this will make a new directory named "place" with the contents of
 everything in here
+
+
+now we can git pull from other places.
+
+
+********
+
+Setting up the user name and email
+
+On my local machine, the username and email was wrong.
+
+git config --global user.name "Alex Bahouth"
+git config --global user.email "ajbahouth@gmail.com" can now be set
+
+
+if I want to set for a particular repository, then I just omit global above
