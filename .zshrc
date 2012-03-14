@@ -1,6 +1,7 @@
 export HADOOP_HOME=/usr/local/hadoop
+export STORM_HOME=/usr/local/storm-0.7.0
 
-export DEFAULT_PATH=/usr/local/mysql/bin:/sw/bin:/opt/local/bin:/Library/Frameworks/Python.framework/Versions/2.6/bin:/usr/local/bin:/Applications/GridGain221/bin:/Applications/apache-maven-3.0.3/bin/:.:${PATH}:$HADOOP_HOME/bin
+export DEFAULT_PATH=/sw/bin:/opt/local/bin:/Library/Frameworks/Python.framework/Versions/2.6/bin:/usr/local/bin:/Applications/GridGain221/bin:/Applications/apache-maven-3.0.3/bin/:.:${PATH}:$HADOOP_HOME/bin:$STORM_HOME/bin
 
 
 source ~/.zsh.d/mac.zsh
@@ -75,8 +76,12 @@ alias clean="rm -f *~; rm -f *.*~; rm -f *.tmp; rm -f *.pyc; rm -f *.o; rm -f *.
 alias web="cd /Library/WebServer/Documents"
 
 ### MySQL ###
-alias mysqlstart="sudo /usr/local/mysql/bin/mysqld_safe --user=mysql &"
-alias mysql="mysql -u root -p"
+#alias mysqlstart="sudo /usr/local/mysql/bin/mysqld_safe --user=mysql &"
+#alias mysql="mysql -u root -p"
+
+### POSTGRES ###
+alias pgstart='pg_ctl -D /usr/local/var/postgres/data -l /usr/local/var/postgres/server.log start'
+alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
 ### SSH Short cuts ###
 alias ud1="ssh_with_color abahouth@ud-app1.mercedsystems.com"
