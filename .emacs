@@ -175,8 +175,16 @@
 ;;; Clojure
 (require 'clojure-mode)
 
+;; NOTE comment this out when you want to use bake/guru/merced compile commands
+(setq compile-command "lein compile")
+;; run the interpreter
+(global-set-key "\C-xrc" 'inferior-lisp) 
+
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; PHP
+;; php mode sucks. Pretty much.
 (require 'php-mode)
 
 (setq visible-bell t)
@@ -200,3 +208,6 @@
 (defun my-comint-init ()
   (setq comint-process-echoes t))
 (add-hook 'comint-mode-hook 'my-comint-init)
+
+
+
