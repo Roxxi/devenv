@@ -53,7 +53,6 @@
 (global-set-key [(control shift ?s)] 'list-matching-lines)
 
 
-
 ;; transparency!
 
 ;(set-frame-parameter (selected-frame) 'alpha '(<active> [<inactive>]))
