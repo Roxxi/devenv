@@ -136,6 +136,13 @@
 ;; Enable toggling of uninteresting files.
 (setq dired-omit-files-p t)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; git
+;; From https://github.com/tsgates/git-emacs
+(add-to-list 'load-path (concat (getenv "HOME") "/.emacs.d/git-emacs"))
+(require 'git-emacs)
+
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; HTML
