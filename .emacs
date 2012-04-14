@@ -139,6 +139,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; git
 ;; From https://github.com/tsgates/git-emacs
+(require 'vc-git)
 (add-to-list 'load-path (concat (getenv "HOME") "/.emacs.d/git-emacs"))
 (require 'git-emacs)
 
