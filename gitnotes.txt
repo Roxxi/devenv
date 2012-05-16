@@ -40,7 +40,7 @@ where <id> ::= some identifier that we can use to name our
 repository, (in this case, "dreamhost")
 
 <path-to-repo> ::= ssh://remove-path-to-repo
-in this case ssh://ajbahouth@gravano.dreamhost.com/git/env/
+in this case ssh://ajbahouth@gravano.dreamhost.com/~/git/env/
 
 Now we want to push this crap
 =git push dreamhost <branch>=  <branch> by default is "master"
