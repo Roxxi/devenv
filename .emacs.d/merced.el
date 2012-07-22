@@ -79,4 +79,9 @@
 (global-set-key "\C-c;" 'comment-region)
 
 
+
+;; Decompiling .class files...
+;; (require 'decompile-main)
+
+
 (provide 'merced)

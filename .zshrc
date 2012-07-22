@@ -1,7 +1,7 @@
 export HADOOP_HOME=/usr/local/hadoop
 export STORM_HOME=/usr/local/storm-0.7.0
 
-export DEFAULT_PATH=/sw/bin:/opt/local/bin:/Library/Frameworks/Python.framework/Versions/2.6/bin:/usr/local/bin:/Applications/GridGain221/bin:/Applications/apache-maven-3.0.3/bin/:.:${PATH}:$HADOOP_HOME/bin:$STORM_HOME/bin
+export DEFAULT_PATH=/sw/bin:/opt/local/bin:/usr/local/sbin:/Library/Frameworks/Python.framework/Versions/2.6/bin:/usr/local/bin:/Applications/GridGain221/bin:/Applications/apache-maven-3.0.3/bin/:.:${PATH}:$HADOOP_HOME/bin:$STORM_HOME/bin
 
 
 source ~/.zsh.d/mac.zsh
