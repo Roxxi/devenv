@@ -68,7 +68,7 @@ setopt inc_append_history
 
 alias resource="source ~/.zshrc"
 
-alias ls="/opt/local/bin/gls --color=tty -BF ${LS_IGNORE}"
+alias ls="gls --color=tty -BF ${LS_IGNORE}"
 #alias ls="ls -F"
 cd() {builtin cd "$@" && ls;}
 #alias cd='cd $@; ls'
