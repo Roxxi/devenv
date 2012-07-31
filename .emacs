@@ -199,6 +199,12 @@
 ;;; ERC (Emacs IRC)
 
 (setq erc-hide-list '("JOIN" "PART" "QUIT"))
+(setq erc-autojoin-channels-alist
+      '(("freenode.net" "#clojure")
+        ("irc.aniverse.com" "#honobono")))
+(defun erc-go ()
+  (erc :server "irc.freenode.net" :port 6667 :nick "Roxxi")
+  (erc :server "irc.aniverse.com" :port 6667 :nick "Roxxi"))
 
 
 
