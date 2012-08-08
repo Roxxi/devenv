@@ -85,12 +85,15 @@ alias pgstart='pg_ctl -D /usr/local/var/postgres/data -l /usr/local/var/postgres
 alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
 ### SSH Short cuts ###
-alias ud1="ssh_with_color abahouth@ud-app1.mercedsystems.com"
-alias ud2="ssh_with_color abahouth@ud-app2.mercedsystems.com"
-alias ud3="ssh_with_color abahouth@ud-app3.mercedsystems.com"
 alias forums="ssh_with_color  merced@forums"
 alias forumsrwc="ssh_with_color  merced@forums-rwc"
 alias kaynne="ssh_with_color  ajbahouth@kaynne.com"
 
 ### Merced Stuff ###
 #source .zsh_merced
+
+### Analytica Stuff ###
+alias anal1="ssh -i ~/.analytica.pem root@23.21.233.31"
+alias anal2="ssh -i ~/.analytica.pem ubuntu@ec2-23-20-101-50.compute-1.amazonaws.com"
+
+export ANALYTICA_VERSION="0.1.0-SNAPSHOT"

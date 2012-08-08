@@ -20,6 +20,13 @@
 ;;; Merced
 ;; (require 'merced)
 ;; (require 'erin) ;; twiki
+;; OMG I NEED THIS
+(setq unlog
+   [?\C-\M-k right C-M-left ?\C-y ?\C-\M-k])
+(global-set-key "\C-x\C-l" unlog)
+(global-set-key "\C-c;" 'comment-region)
+(global-set-key "\C-c'" 'uncomment-region)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; window dimensions
@@ -38,7 +45,7 @@
   ;; If there is more than one, they won't work right.
  '(column-number-mode t)
  '(delete-selection-mode t)
- '(global-hl-line-mode t)
+;; '(global-hl-line-mode t)
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(save-place t nil (saveplace))
@@ -58,17 +65,20 @@
 ;; transparency!
 
 ;(set-frame-parameter (selected-frame) 'alpha '(<active> [<inactive>]))
-(set-frame-parameter (selected-frame) 'alpha '(85 70))
-(add-to-list 'default-frame-alist '(alpha 85 70))
+(set-frame-parameter (selected-frame) 'alpha '(95 80))
+(add-to-list 'default-frame-alist '(alpha 95 80))
 
 (eval-when-compile (require 'cl))
 (defun toggle-transparency ()
   (interactive)
   (if (/= (cadr (frame-parameter nil 'alpha)) 100)
-      (set-frame-parameter nil 'alpha '(100 100))
-    (set-frame-parameter nil 'alpha '(85 70))))
+      (set-frame-parameter nil 'alpha '(95 100))
+    (set-frame-parameter nil 'alpha '(85 80))))
 (global-set-key (kbd "C-c t") 'toggle-transparency)
 
+
+;; Font size... (each point of height is 1/10th pt e.g. 120 = 12pt)
+(set-face-attribute 'default nil :height 140)
 
 ;; iswitchb = makes C-x b awesome
 (iswitchb-mode 1)
@@ -97,6 +107,29 @@
 ;; show colored ls output in shell
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+
+(setq visible-bell t)
+
+(put 'erase-buffer 'disabled nil)
+
+;; My very own customizations!
+;; I don't like jerky scrolling
+(setq scroll-step 1)
+
+(put 'narrow-to-region 'disabled nil)
+(custom-set-faces
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(cursor ((t nil))))
+
+
+;; stop shell from echoing commands
+(defun my-comint-init ()
+  (setq comint-process-echoes t))
+(add-hook 'comint-mode-hook 'my-comint-init)
+
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -195,16 +228,26 @@
 ;; run the interpreter
 (global-set-key "\C-xrc" 'inferior-lisp) 
 
+;; To get syntax highlighting in your repl buffer, use this elisp:
+(add-hook 'slime-repl-mode-hook
+          (defun clojure-mode-slime-font-lock ()
+            (require 'clojure-mode)
+            (let (font-lock-mode)
+              (clojure-mode-font-lock-setup))))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; ERC (Emacs IRC)
 
 (setq erc-hide-list '("JOIN" "PART" "QUIT"))
 (setq erc-autojoin-channels-alist
       '(("freenode.net" "#clojure")
-        ("irc.aniverse.com" "#honobono")))
+        ;("aniverse.com" "#honobono")
+        ))
 (defun erc-go ()
+  (interactive)
   (erc :server "irc.freenode.net" :port 6667 :nick "Roxxi")
-  (erc :server "irc.aniverse.com" :port 6667 :nick "Roxxi"))
+  ;(erc :server "irc.aniverse.com" :port 6667 :nick "Roxxi")
+  )
 
 
 
@@ -213,25 +256,19 @@
 ;; php mode sucks. Pretty much.
 (require 'php-mode)
 
-(setq visible-bell t)
-
-(put 'erase-buffer 'disabled nil)
-
-;; My very own customizations!
-;; I don't like jerky scrolling
-(setq scroll-step 1)
-
-(put 'narrow-to-region 'disabled nil)
-(custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- '(cursor ((t nil))))
 
 
-;; stop shell from echoing commands
-(defun my-comint-init ()
-  (setq comint-process-echoes t))
-(add-hook 'comint-mode-hook 'my-comint-init)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Color Theme
+
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/color-theme-6.6.0"))
+(require 'color-theme)
+(eval-after-load "color-theme"
+  '(progn
+     (color-theme-initialize)
+     ;; set the color theme here
+     ;; to change it on the fly, M-x color-theme-<tab> for the list
+     ;; (color-theme-standard) is the same as saying "nothing"
+     (color-theme-hober)))
+
 
