@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 test_projects/*/target
 **/target
 /target
@@ -21,3 +22,14 @@ TAGS
 /leiningen-core/dev-resources/target
 *asc
 *~
+=======
+pom.xml
+lib
+classes
+simple-avro-*.jar
+bin
+clojure*.jar
+.project
+.classpath
+.settings
+>>>>>>> 8c2a296777bfe8e9f1a996776e9470f5c9e80dba

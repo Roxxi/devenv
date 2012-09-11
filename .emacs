@@ -235,12 +235,24 @@
             (let (font-lock-mode)
               (clojure-mode-font-lock-setup))))
 
+;;; Compojure formatting
+(define-clojure-indent
+  (defroutes 'defun)
+  (GET 2)
+  (POST 2)
+  (PUT 2)
+  (DELETE 2)
+  (HEAD 2)
+  (ANY 2)
+  (context 2))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; ERC (Emacs IRC)
 
 (setq erc-hide-list '("JOIN" "PART" "QUIT"))
 (setq erc-autojoin-channels-alist
       '(("freenode.net" "#clojure")
+        ("freenode.net" "#leiningen")
         ;("aniverse.com" "#honobono")
         ))
 (defun erc-go ()

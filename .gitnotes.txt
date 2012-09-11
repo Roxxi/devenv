@@ -112,3 +112,11 @@ git config --global user.email "ajbahouth@gmail.com" can now be set
 
 
 if I want to set for a particular repository, then I just omit global above
+
+
+================================================================================
+
+p4 -> git
+
+p4 revert ... => git reset --hard
+

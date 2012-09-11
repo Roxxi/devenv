@@ -1,7 +1,6 @@
-export HADOOP_HOME=/usr/local/hadoop
 export STORM_HOME=/usr/local/storm-0.7.0
 
-export DEFAULT_PATH=/sw/bin:/opt/local/bin:/usr/local/sbin:/Library/Frameworks/Python.framework/Versions/2.6/bin:/usr/local/bin:/Applications/GridGain221/bin:/Applications/apache-maven-3.0.3/bin/:.:${PATH}:$HADOOP_HOME/bin:$STORM_HOME/bin
+export DEFAULT_PATH=/sw/bin:/opt/local/bin:/usr/local/sbin:/Library/Frameworks/Python.framework/Versions/2.6/bin:/usr/local/bin:/Applications/GridGain221/bin:/Applications/apache-maven-3.0.3/bin/:.:${PATH}:$STORM_HOME/bin
 
 
 source ~/.zsh.d/mac.zsh
@@ -89,11 +88,15 @@ alias forums="ssh_with_color  merced@forums"
 alias forumsrwc="ssh_with_color  merced@forums-rwc"
 alias kaynne="ssh_with_color  ajbahouth@kaynne.com"
 
+### Hadoop ###
+alias dfs="hadoop dfs"
+
 ### Merced Stuff ###
 #source .zsh_merced
 
 ### Analytica Stuff ###
 alias anal1="ssh -i ~/.analytica.pem root@23.21.233.31"
 alias anal2="ssh -i ~/.analytica.pem ubuntu@ec2-23-20-101-50.compute-1.amazonaws.com"
+alias analwiki="ssh -i ~/.amazon-aws/AlexsTestWebWiki.pem ubuntu@54.245.107.72"
 
 export ANALYTICA_VERSION="0.1.0-SNAPSHOT"
