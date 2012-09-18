@@ -3,12 +3,15 @@ package com.frankreno.assignment3;
 import java.util.Map;
 
 import com.frankreno.assignment3.bankaccount.BankAccount;
+import com.frankreno.assignment3.bankaccount.BankAccountImpl.AccountType;
 import com.frankreno.assignment3.bankaccount.NullAccountTypeException;
+import com.frankreno.assignment3.bankaccount.dialog.BankAccountInputDialog;
 import com.frankreno.assignment3.bankaccount.processor.AccountProcessor;
 import com.frankreno.assignment3.bankaccount.processor.AccountProcessorImpl;
 import com.frankreno.assignment3.bankaccount.processor.AccountProcessorImpl.TransactionType;
 import com.frankreno.assignment3.bankaccount.types.CheckingAccount;
 import com.frankreno.assignment3.bankaccount.types.SavingsAccount;
+import com.frankreno.helpers.MultiInputDialogImpl.InputDialogAction;
 
 /**
  * @author frankreno
@@ -57,20 +60,22 @@ public class ProgrammingAssignment3 {
 	//construct the appropriate bank account
 	private static BankAccount createBankAccount(Map<String, Object> processedInput) 
 			throws NullAccountTypeException {
-		BankAccount bankAccount;
-		int acctType, acctNum;
+		
 		double minBal, curBal;
+		int acctNum;
+		AccountType acctType;
+		BankAccount bankAccount;
 
 		acctNum = (Integer) processedInput.get("acctNum");
-		acctType = (Integer) processedInput.get("acctType");
+		acctType = (AccountType) processedInput.get("acctType");
 		minBal = (Double) processedInput.get("minBal");
 		curBal = (Double) processedInput.get("curBal");
 
 		switch (acctType) {
-			case 1:
+			case CHECKING:
 				bankAccount = new CheckingAccount(acctNum, minBal, curBal);
 				return bankAccount;
-			case 2:
+			case SAVINGS:
 				bankAccount = new SavingsAccount(acctNum, minBal, curBal);
 				return bankAccount;
 			default:
@@ -81,6 +86,7 @@ public class ProgrammingAssignment3 {
 	//construct the account processor to process the account
 	private static AccountProcessor createAccountProcessor(BankAccount bankAccount) {
 		AccountProcessor processor ;
+		
 		if (bankAccount.getIsBelowMinBal()) {
 			processor = new AccountProcessorImpl(
 					TransactionType.APPLY_SERVICE_FEE, bankAccount);
@@ -91,7 +97,4 @@ public class ProgrammingAssignment3 {
 		
 		return processor;
 	}
-	
-
-	
 }

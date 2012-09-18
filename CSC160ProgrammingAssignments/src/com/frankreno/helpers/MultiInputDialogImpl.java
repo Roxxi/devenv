@@ -12,13 +12,20 @@ import javax.swing.JTextField;
 
 public class MultiInputDialogImpl {
 	
+	//define the possible actions the dialog could take
+	public enum InputDialogAction {
+		OK, CANCEL;
+	}
+	
 	//constants to define grid layout
 	static int ROWS = 0;
 	static int COLUMNS = 2;
 	
 	private int rows, cols;
 	private GridLayout gridLayout;
+	private InputDialogAction action;
 	private JPanel panel;
+	private Map<String, String> rawInput;
 	private String title;
 	private String[][] inputs;
 	
@@ -26,20 +33,26 @@ public class MultiInputDialogImpl {
 	public MultiInputDialogImpl(String dialogTitle, String[][] dialogInputs) {
 		rows = ROWS;
 		cols = COLUMNS;
+		title = dialogTitle;
 		inputs = dialogInputs;
 		gridLayout = new GridLayout(rows, cols);
-		panel = createPanel(gridLayout, dialogInputs);
-		title = dialogTitle;
+		panel = createPanel(gridLayout, inputs);
+		rawInput = createRawInput();
+		int rawAction = open();
+		action = lookupAction(rawAction);
 	}
-	
+
 	//construct by specifying rows/columns
 	public MultiInputDialogImpl(String dialogTitle, String[][] dialogInputs, int numRows, int numCols) {
 		rows = numRows;
 		cols = numCols;
+		title = dialogTitle;
 		inputs = dialogInputs;
 		gridLayout = new GridLayout(rows, cols);
-		panel = createPanel(gridLayout, dialogInputs);
-		title = dialogTitle;
+		panel = createPanel(gridLayout, inputs);
+		rawInput = createRawInput();
+		int rawAction = open();
+		action = lookupAction(rawAction);
 	}
 	
 	//create the panel
@@ -59,7 +72,7 @@ public class MultiInputDialogImpl {
 	}
 	
 	//open the dialog, returns int to capture selection
-	public int open() {		
+	private int open() {		
 		int action = JOptionPane.showConfirmDialog(null, 
 				panel, 
 				title, 
@@ -68,7 +81,7 @@ public class MultiInputDialogImpl {
 		return action;
 	}
 	
-	public Map<String, String> getInput() {
+	private Map<String, String> createRawInput() {
 		Map<String, String> input = new HashMap<String, String>();
 		
 		Component[] components = panel.getComponents();
@@ -84,6 +97,18 @@ public class MultiInputDialogImpl {
 		}
 		return input;
 	}
+	
+	private InputDialogAction lookupAction(int rawAction) {
+		switch(rawAction) {
+			case JOptionPane.OK_OPTION:
+				return InputDialogAction.OK;
+			case JOptionPane.CANCEL_OPTION:
+				return InputDialogAction.CANCEL;
+			default:
+				return null;
+		}
+	}
+
 	
 	public int getRows() {
 		return rows;
@@ -109,4 +134,11 @@ public class MultiInputDialogImpl {
 		return inputs;
 	}
 	
+	public Map<String, String> getRawInput() {
+		return rawInput;
+	}
+	
+	public InputDialogAction getAction() {
+		return action;
+	}
 }

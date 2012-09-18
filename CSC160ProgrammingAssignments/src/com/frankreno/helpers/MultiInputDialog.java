@@ -5,13 +5,9 @@ import java.util.Map;
 
 import javax.swing.JPanel;
 
+import com.frankreno.helpers.MultiInputDialogImpl.InputDialogAction;
+
 public interface MultiInputDialog {
-	
-	//opens the dialog
-	public int open();
-	
-	//returns the input
-	public Map<String, String> getInput();
 	
 	//returns the number of rows in the dialog
 	public int getRows();
@@ -32,5 +28,14 @@ public interface MultiInputDialog {
 	//each row represents one input
 	//each array in the row stores the input label, size and name
 	public String[][] getInputs();
+	
+	//returns the raw input
+	public Map<String, String> getRawInput();
+	
+	//returns the action taken in the dialog
+	public InputDialogAction getAction();
+	
+	//get the processed data
+	public Map<String, Object> getProcessedInput();
 
 }
