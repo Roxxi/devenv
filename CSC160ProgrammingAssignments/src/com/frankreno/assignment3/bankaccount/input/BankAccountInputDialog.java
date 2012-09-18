@@ -1,8 +1,7 @@
-package com.frankreno.assignment3.bankaccount.dialog;
+package com.frankreno.assignment3.bankaccount.input;
 
 import java.util.Map;
 
-import com.frankreno.assignment3.bankaccount.processor.BankAccountInputProcessor;
 import com.frankreno.helpers.MultiInputDialog;
 import com.frankreno.helpers.MultiInputDialogImpl;
 

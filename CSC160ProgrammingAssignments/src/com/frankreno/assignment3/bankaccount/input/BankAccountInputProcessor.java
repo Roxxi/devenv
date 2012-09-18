@@ -1,4 +1,4 @@
-package com.frankreno.assignment3.bankaccount.processor;
+package com.frankreno.assignment3.bankaccount.input;
 
 import java.util.HashMap;
 import java.util.Map;

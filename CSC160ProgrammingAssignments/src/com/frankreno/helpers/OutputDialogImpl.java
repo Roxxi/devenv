@@ -4,23 +4,39 @@ import javax.swing.JOptionPane;
 
 public class OutputDialogImpl implements OutputDialog {
 	
-	private int dialogType;
-	private String outputMessage, dialogTitle;
+	public enum OutputDialogType {
+		ERROR, RESULT;
+	}
 	
-	public OutputDialogImpl(int type, String title, String output) {
+	private String outputMessage, dialogTitle;
+	private OutputDialogType dialogType;
+	
+	public OutputDialogImpl(OutputDialogType type, String title, String output) {
 		outputMessage = output;
 		dialogTitle = title;
 		dialogType = type;
+		open();
 	}
 	
 	//open the dialog based on based construction of object
-	public void open() {
+	private void open() {
 		JOptionPane.showMessageDialog(null, 
 				outputMessage, 
 				dialogTitle, 
-				dialogType);
+				lookupDialogType(dialogType));
 	}
 	
+	private int lookupDialogType(OutputDialogType dialogType) {
+		switch(dialogType) {
+			case ERROR:
+				return JOptionPane.ERROR_MESSAGE;
+			case RESULT:
+				return JOptionPane.INFORMATION_MESSAGE;
+			default:
+				return 0;
+		}
+	}
+
 	public String getOutputMessage() {
 		return outputMessage;
 	}
@@ -29,7 +45,7 @@ public class OutputDialogImpl implements OutputDialog {
 		return dialogTitle;
 	}
 	
-	public int getDialogType() {
+	public OutputDialogType getDialogType() {
 		return dialogType;
 	}
 

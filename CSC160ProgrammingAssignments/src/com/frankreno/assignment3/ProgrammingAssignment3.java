@@ -5,12 +5,15 @@ import java.util.Map;
 import com.frankreno.assignment3.bankaccount.BankAccount;
 import com.frankreno.assignment3.bankaccount.BankAccountImpl.AccountType;
 import com.frankreno.assignment3.bankaccount.NullAccountTypeException;
-import com.frankreno.assignment3.bankaccount.dialog.BankAccountInputDialog;
+import com.frankreno.assignment3.bankaccount.input.BankAccountInputDialog;
+import com.frankreno.assignment3.bankaccount.output.BankAccountOutputDialog;
+import com.frankreno.assignment3.bankaccount.output.BankAccountOutputGenerator;
 import com.frankreno.assignment3.bankaccount.processor.BankAccountProcessor;
 import com.frankreno.assignment3.bankaccount.processor.BankAccountProcessorImpl;
 import com.frankreno.assignment3.bankaccount.processor.BankAccountProcessorImpl.TransactionType;
 import com.frankreno.assignment3.bankaccount.types.CheckingAccount;
 import com.frankreno.assignment3.bankaccount.types.SavingsAccount;
+import com.frankreno.helpers.ErrorDialog;
 import com.frankreno.helpers.MultiInputDialogImpl.InputDialogAction;
 
 /**

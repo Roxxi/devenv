@@ -37,9 +37,9 @@ public class MultiInputDialogImpl {
 		inputs = dialogInputs;
 		gridLayout = new GridLayout(rows, cols);
 		panel = createPanel(gridLayout, inputs);
-		rawInput = createRawInput();
 		int rawAction = open();
 		action = lookupAction(rawAction);
+		rawInput = createRawInput();
 	}
 
 	//construct by specifying rows/columns
@@ -50,9 +50,9 @@ public class MultiInputDialogImpl {
 		inputs = dialogInputs;
 		gridLayout = new GridLayout(rows, cols);
 		panel = createPanel(gridLayout, inputs);
-		rawInput = createRawInput();
 		int rawAction = open();
 		action = lookupAction(rawAction);
+		rawInput = createRawInput();
 	}
 	
 	//create the panel

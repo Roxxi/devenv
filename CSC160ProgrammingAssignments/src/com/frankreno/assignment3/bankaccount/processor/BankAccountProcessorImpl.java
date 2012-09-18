@@ -45,7 +45,7 @@ public class BankAccountProcessorImpl implements BankAccountProcessor {
 		StringBuffer result = new StringBuffer();
 		
 		result.append(INTEREST_RATE_START);
-		result.append(account.getInterestRate());
+		result.append(BankAccountUtils.formatTwoDecimals(account.getInterestRate() * 100));
 		result.append(INTEREST_RATE_END);
 		
 		return result.toString();

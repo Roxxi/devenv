@@ -1,9 +1,8 @@
 package com.frankreno.helpers;
 
-public interface OutputDialog {
+import com.frankreno.helpers.OutputDialogImpl.OutputDialogType;
 
-	//open the dialog
-	public void open();
+public interface OutputDialog {
 	
 	//get the message
 	public String getOutputMessage();
@@ -12,6 +11,6 @@ public interface OutputDialog {
 	public String getDialogTitle();
 	
 	//get the type
-	public int getDialogType();
+	public OutputDialogType getDialogType();
 	
 }
