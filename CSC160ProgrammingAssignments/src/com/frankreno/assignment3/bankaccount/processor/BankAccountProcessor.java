@@ -1,6 +1,6 @@
 package com.frankreno.assignment3.bankaccount.processor;
 
-public interface AccountProcessor {
+public interface BankAccountProcessor {
 	
 	//get the updated balance
 	public double getNewBalance();

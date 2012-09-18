@@ -6,9 +6,9 @@ import com.frankreno.assignment3.bankaccount.BankAccount;
 import com.frankreno.assignment3.bankaccount.BankAccountImpl.AccountType;
 import com.frankreno.assignment3.bankaccount.NullAccountTypeException;
 import com.frankreno.assignment3.bankaccount.dialog.BankAccountInputDialog;
-import com.frankreno.assignment3.bankaccount.processor.AccountProcessor;
-import com.frankreno.assignment3.bankaccount.processor.AccountProcessorImpl;
-import com.frankreno.assignment3.bankaccount.processor.AccountProcessorImpl.TransactionType;
+import com.frankreno.assignment3.bankaccount.processor.BankAccountProcessor;
+import com.frankreno.assignment3.bankaccount.processor.BankAccountProcessorImpl;
+import com.frankreno.assignment3.bankaccount.processor.BankAccountProcessorImpl.TransactionType;
 import com.frankreno.assignment3.bankaccount.types.CheckingAccount;
 import com.frankreno.assignment3.bankaccount.types.SavingsAccount;
 import com.frankreno.helpers.MultiInputDialogImpl.InputDialogAction;
@@ -42,7 +42,7 @@ public class ProgrammingAssignment3 {
 			if (iDialog.getAction() == InputDialogAction.OK) {
 				Map<String, Object> processedInput = iDialog.getProcessedInput();
 				BankAccount bankAccount = createBankAccount(processedInput);
-				AccountProcessor processor = createAccountProcessor(bankAccount);
+				BankAccountProcessor processor = createAccountProcessor(bankAccount);
 				BankAccountOutputGenerator oGenerator = 
 						new BankAccountOutputGenerator(bankAccount, processor);
 				BankAccountOutputDialog oDialog =
@@ -84,14 +84,14 @@ public class ProgrammingAssignment3 {
 	}
 	
 	//construct the account processor to process the account
-	private static AccountProcessor createAccountProcessor(BankAccount bankAccount) {
-		AccountProcessor processor ;
+	private static BankAccountProcessor createAccountProcessor(BankAccount bankAccount) {
+		BankAccountProcessor processor ;
 		
 		if (bankAccount.getIsBelowMinBal()) {
-			processor = new AccountProcessorImpl(
+			processor = new BankAccountProcessorImpl(
 					TransactionType.APPLY_SERVICE_FEE, bankAccount);
 		} else {
-			processor = new AccountProcessorImpl(
+			processor = new BankAccountProcessorImpl(
 					TransactionType.APPLY_INTEREST, bankAccount);
 		}
 		

@@ -3,7 +3,7 @@ package com.frankreno.assignment3.bankaccount.processor;
 import com.frankreno.assignment3.bankaccount.BankAccount;
 import com.frankreno.assignment3.bankaccount.BankAccountUtils;
 
-public class AccountProcessorImpl implements AccountProcessor {
+public class BankAccountProcessorImpl implements BankAccountProcessor {
 	
 	//define the possible transaction types
 	public enum TransactionType {
@@ -22,7 +22,7 @@ public class AccountProcessorImpl implements AccountProcessor {
 	private double newBalance;
 	private String result;
 	
-	public AccountProcessorImpl(TransactionType transaction, BankAccount account) {
+	public BankAccountProcessorImpl(TransactionType transaction, BankAccount account) {
 		switch (transaction) {
 		case APPLY_INTEREST:
 			applyInterest(account);
