@@ -1,4 +1,4 @@
-package com.frankreno.helpers;
+package com.frankreno.assignment3;
 
 @SuppressWarnings("serial")
 public class NullAccountTypeException extends Exception {

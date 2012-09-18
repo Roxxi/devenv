@@ -1,8 +1,11 @@
-package com.frankreno.helpers;
-
-import com.frankreno.assignment3.ProgrammingAssignment3.TransactionType;
+package com.frankreno.assignment3;
 
 public class AccountProcessorImpl implements AccountProcessor {
+	
+	//define the possible transaction types
+	public enum TransactionType {
+		APPLY_INTEREST, APPLY_SERVICE_FEE;
+	}
 	
 	//strings for result
 	static String INTEREST_RATE_START = "You have earned ";

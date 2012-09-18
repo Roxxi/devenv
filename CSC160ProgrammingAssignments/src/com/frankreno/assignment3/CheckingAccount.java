@@ -1,4 +1,4 @@
-package com.frankreno.helpers;
+package com.frankreno.assignment3;
 
 import com.frankreno.assignment3.ProgrammingAssignment3.AccountType;
 
