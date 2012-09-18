@@ -1,4 +1,4 @@
-package com.frankreno.assignment3;
+package com.frankreno.assignment3.bankaccount;
 
 import java.text.DecimalFormat;
 

@@ -1,6 +1,6 @@
-package com.frankreno.assignment3;
+package com.frankreno.assignment3.bankaccount;
 
-import com.frankreno.assignment3.BankAccountImpl.AccountType;
+import com.frankreno.assignment3.bankaccount.BankAccountImpl.AccountType;
 
 public interface BankAccount {
 	

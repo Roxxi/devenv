@@ -1,6 +1,9 @@
-package com.frankreno.assignment3;
+package com.frankreno.assignment3.bankaccount.types;
 
 import com.frankreno.assignment3.ProgrammingAssignment3.AccountType;
+import com.frankreno.assignment3.bankaccount.BankAccount;
+import com.frankreno.assignment3.bankaccount.BankAccountImpl;
+import com.frankreno.assignment3.bankaccount.BankAccountUtils;
 
 public class CheckingAccount implements BankAccount {
 

@@ -1,4 +1,7 @@
-package com.frankreno.assignment3;
+package com.frankreno.assignment3.bankaccount.processor;
+
+import com.frankreno.assignment3.bankaccount.BankAccount;
+import com.frankreno.assignment3.bankaccount.BankAccountUtils;
 
 public class AccountProcessorImpl implements AccountProcessor {
 	

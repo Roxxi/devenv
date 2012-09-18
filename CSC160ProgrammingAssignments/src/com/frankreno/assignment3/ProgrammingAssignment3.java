@@ -2,7 +2,13 @@ package com.frankreno.assignment3;
 
 import java.util.Map;
 
-import com.frankreno.assignment3.AccountProcessorImpl.TransactionType;
+import com.frankreno.assignment3.bankaccount.BankAccount;
+import com.frankreno.assignment3.bankaccount.NullAccountTypeException;
+import com.frankreno.assignment3.bankaccount.processor.AccountProcessor;
+import com.frankreno.assignment3.bankaccount.processor.AccountProcessorImpl;
+import com.frankreno.assignment3.bankaccount.processor.AccountProcessorImpl.TransactionType;
+import com.frankreno.assignment3.bankaccount.types.CheckingAccount;
+import com.frankreno.assignment3.bankaccount.types.SavingsAccount;
 
 /**
  * @author frankreno
