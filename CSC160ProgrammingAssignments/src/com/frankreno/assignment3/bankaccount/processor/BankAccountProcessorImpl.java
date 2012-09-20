@@ -63,7 +63,7 @@ public class BankAccountProcessorImpl implements BankAccountProcessor {
 		result.append(BankAccountUtils.formatTwoDecimals(account.getMinimumBalance()));
 		result.append(CURRENT_BALANCE_END);
 		result.append(SERVICE_FEE_START);
-		result.append(account.getServiceFee());
+		result.append(BankAccountUtils.formatTwoDecimals(account.getServiceFee()));
 		result.append(SERVICE_FEE_END);
 		
 		return result.toString();
