@@ -73,6 +73,10 @@ public class ProgrammingAssignment3 {
 		acctType = (AccountType) processedInput.get("acctType");
 		minBal = (Double) processedInput.get("minBal");
 		curBal = (Double) processedInput.get("curBal");
+		
+		if (acctType == null) {
+			throw new NullAccountTypeException();
+		}
 
 		switch (acctType) {
 			case CHECKING:
