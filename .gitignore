@@ -63,3 +63,12 @@ TAGS
 Icon?
 ehthumbs.db
 Thumbs.db
+
+# Leiningen #
+#############
+pom.xml
+*jar
+/lib/
+/classes/
+/targets/
+.lein-deps-sum
