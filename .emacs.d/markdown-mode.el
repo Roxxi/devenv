@@ -1808,7 +1808,7 @@ be available via `match-string'."
 Spaces are converted to underscores, following the convention
 used by the Python Markdown WikiLinks extension."
   (let ((new-ext (file-name-extension (buffer-file-name)))
-	(new-basename (replace-regexp-in-string "[[:space:]\n]" "_" name)))
+	(new-basename (replace-regexp-in-string "[[:space:]\n]" "-" name)))
     (concat new-basename "." new-ext)))
 
 (defun markdown-follow-wiki-link (name)

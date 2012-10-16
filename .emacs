@@ -52,7 +52,7 @@
  '(scroll-bar-mode (quote right))
  '(show-paren-mode t)
  '(size-indication-mode t)
- '(text-mode-hook (quote (turn-on-auto-fill text-mode-hook-identify)))
+ '(text-mode-hook (quote (text-mode-hook-identify)))
  '(transient-mark-mode (quote (only . t)))
  '(visible-cursor t))
 
@@ -125,10 +125,14 @@
  '(cursor ((t nil))))
 
 
+;; hide passwords in the shell
+(defvar comint-password-prompt-regexp "\\(\\([Oo]ld \\|[Nn]ew \\|'s \\|login \\|Kerberos \\|CVS \\|UNIX \\| SMB \\|^\\|Enter \\)[Pp]assword\\( (again)\\)?\\|pass phrase\\|\\(Enter\\|Repeat\\|Bad\\) passphrase\\)\\(?:, try again\\)?\\(?: for [^:]+\\)?:\\s *\\'")
 ;; stop shell from echoing commands
 (defun my-comint-init ()
   (setq comint-process-echoes t))
-(add-hook 'comint-mode-hook 'my-comint-init)
+(add-hook 'comint-mode-hook 'my-comint-init 'comint-watch-for-password-prompt)
+(add-hook 'comint-output-filter-functions 'comint-watch-for-password-prompt)
+
 
 
 
@@ -223,7 +227,7 @@
 ;;; Clojure
 (require 'clojure-mode)
 
-;; NOTE comment this out when you want to use bake/guru/merced compile commands
+
 (setq compile-command "lein compile")
 ;; run the interpreter
 (global-set-key "\C-xrc" 'inferior-lisp) 
@@ -286,6 +290,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Markdown mode
 (require 'markdown-mode)
-(add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md$" . gfm-mode))
+(add-hook 'gfm-mode-hook 'turn-on-auto-fill)
 
 
+          
