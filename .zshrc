@@ -75,3 +75,6 @@ alias dfs="hadoop dfs"
 
 ### Analytica Stuff ###
 #source .zsh.d/analytica.zsh
+
+### OKL Stuff ###
+source .zsh.d/okl.zsh
