@@ -29,12 +29,12 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; window dimensions
+;;window dimensions
 (setq default-frame-alist
  '(
 ; frame width and height
     (width             . 200)
-    (height            . 56)
+    (height            . 50)
   )
 )
 
