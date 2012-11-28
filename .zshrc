@@ -71,10 +71,10 @@ alias kaynne="ssh_with_color  ajbahouth@kaynne.com"
 alias dfs="hadoop dfs"
 
 ### Merced Stuff ###
-#source .zsh.d/merced.zsh
+#source ~/.zsh.d/merced.zsh
 
 ### Analytica Stuff ###
-#source .zsh.d/analytica.zsh
+#source ~/.zsh.d/analytica.zsh
 
 ### OKL Stuff ###
-source .zsh.d/okl.zsh
+source ~/.zsh.d/okl.zsh
