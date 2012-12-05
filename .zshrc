@@ -76,7 +76,8 @@ alias dfs="hadoop dfs"
 ### Analytica Stuff ###
 #source ~/.zsh.d/analytica.zsh
 
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
 ### OKL Stuff ###
 source ~/.zsh.d/okl.zsh
 
-export PATH=$DEFAULT_PATH:$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
