@@ -29,14 +29,19 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;; Font needs to set before window dimensions for char-width
+;; Font size... (each point of height is 1/10th pt e.g. 120 = 12pt)
+(set-face-attribute 'default nil :height 140)
+
 ;;window dimensions
 (setq default-frame-alist
- '(
+ `(
 ; frame width and height
-    (width             . 200)
-    (height            . 50)
+    (width             . ,(- (/ (/ (display-pixel-width) (frame-char-width)) 2) 4))
+    (height            . ,(- (/ (display-pixel-height) (frame-char-height)) 7))
   )
 )
+
 
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
@@ -62,6 +67,7 @@
 (global-set-key [(control shift ?s)] 'list-matching-lines)
 
 
+
 ;; transparency!
 
 ;(set-frame-parameter (selected-frame) 'alpha '(<active> [<inactive>]))
@@ -77,8 +83,6 @@
 (global-set-key (kbd "C-c t") 'toggle-transparency)
 
 
-;; Font size... (each point of height is 1/10th pt e.g. 120 = 12pt)
-(set-face-attribute 'default nil :height 140)
 
 ;; iswitchb = makes C-x b awesome
 (iswitchb-mode 1)
