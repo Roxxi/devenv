@@ -103,3 +103,5 @@ alias analsite="ssh -i ~/.amazon-aws/analytica-website.pem ubuntu@54.245.100.140
 
 
 export ANALYTICA_VERSION="0.1.0-SNAPSHOT"
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
