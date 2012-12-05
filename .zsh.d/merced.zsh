@@ -1,3 +1,26 @@
+ ## MERCED
+export P4USER='abahouth'
+export P4CLIENT='abahouth1'
+export DEV_ROOT="$HOME/Merced/dev"
+export ROOT_MERCED_HOME="$HOME/Merced/mrh"
+export MAVEN_OPTS="-Xmx1024m"
+export SCM="src/com/merced"
+alias p4l='p4 login -a'
+alias agatha='cd ${DEV_ROOT}/agatha'
+
+# export JAVA_HOME=/Library/Java/Home ## Lion
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0_33-b03-424.jdk/Contents/Home
+export GRIDGAIN_HOME=/Applications/GridGain221
+export ANT_HOME=/opt/local/share/java/apache-ant
+
+## MPS STUFF
+#swap these lines when switching
+export PATH=$DEFAULT_PATH
+#source ~/.zsh.d/merced.zsh
+
+### SSH Short cuts ###
+alias forums="ssh_with_color  merced@forums"
+alias forumsrwc="ssh_with_color  merced@forums-rwc"
 
 ############################################################
 # Merced shortcuts

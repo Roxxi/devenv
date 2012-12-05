@@ -20,25 +20,6 @@ alias jclasslib="java -jar /Applications/jclasslib\ bytecode\ viewer.app/Content
 # C dir
 alias cdir="cd /Users/Roxxi/Programs/Merced/C"
 
- ## MERCED
-export P4USER='abahouth'
-export P4CLIENT='abahouth1'
-export DEV_ROOT="$HOME/Merced/dev"
-export ROOT_MERCED_HOME="$HOME/Merced/mrh"
-export MAVEN_OPTS="-Xmx1024m"
-export SCM="src/com/merced"
-alias p4l='p4 login -a'
-alias agatha='cd ${DEV_ROOT}/agatha'
-
-# export JAVA_HOME=/Library/Java/Home ## Lion
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/1.6.0_33-b03-424.jdk/Contents/Home
-export GRIDGAIN_HOME=/Applications/GridGain221
-export ANT_HOME=/opt/local/share/java/apache-ant
-
-## MPS STUFF
-#swap these lines when switching
-export PATH=$DEFAULT_PATH
-#source ~/.zsh.d/merced.zsh
 
 
 export TCGREP="-inH"
@@ -84,24 +65,19 @@ alias pgstart='pg_ctl -D /usr/local/var/postgres/data -l /usr/local/var/postgres
 alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
 ### SSH Short cuts ###
-alias forums="ssh_with_color  merced@forums"
-alias forumsrwc="ssh_with_color  merced@forums-rwc"
 alias kaynne="ssh_with_color  ajbahouth@kaynne.com"
 
 ### Hadoop ###
 alias dfs="hadoop dfs"
 
 ### Merced Stuff ###
-#source .zsh_merced
+#source ~/.zsh.d/merced.zsh
 
 ### Analytica Stuff ###
-alias anal1="ssh -i ~/.analytica.pem root@23.21.233.31"
-alias anal2="ssh -i ~/.analytica.pem ubuntu@ec2-23-20-101-50.compute-1.amazonaws.com"
-alias analwiki="ssh -i ~/.amazon-aws/AlexsTestWebWiki.pem ubuntu@54.245.107.72"
-alias analbrisk="ssh -i ~/.amazon-aws/brisk.pem ubuntu@ec2-50-112-205-111.us-west-2.compute.amazonaws.com"
-alias analsite="ssh -i ~/.amazon-aws/analytica-website.pem ubuntu@54.245.100.140"
-
-
-export ANALYTICA_VERSION="0.1.0-SNAPSHOT"
+#source ~/.zsh.d/analytica.zsh
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+### OKL Stuff ###
+source ~/.zsh.d/okl.zsh
+

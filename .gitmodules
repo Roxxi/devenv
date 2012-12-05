@@ -1,3 +1,6 @@
 [submodule ".emacs.d/fgallina/python"]
 	path = .emacs.d/fgallina/python
 	url = https://github.com/fgallina/python.el
+[submodule ".emacs.d/git-emacs"]
+	path = .emacs.d/git-emacs
+	url = https://github.com/tsgates/git-emacs.git
