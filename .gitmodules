@@ -4,3 +4,6 @@
 [submodule ".emacs.d/git-emacs"]
 	path = .emacs.d/git-emacs
 	url = https://github.com/tsgates/git-emacs.git
+[submodule ".emacs.d/yaml-mode"]
+	path = .emacs.d/yaml-mode
+	url = https://github.com/yoshiki/yaml-mode.git
