@@ -44,13 +44,14 @@
 
 
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(column-number-mode t)
  '(delete-selection-mode t)
-;; '(global-hl-line-mode t)
+ ;; '(global-hl-line-mode t)
+ '(erc-modules (quote (autojoin button completion fill irccontrols list match menu move-to-prompt netsplit networks noncommands readonly ring services stamp track)))
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(save-place t nil (saveplace))
@@ -122,10 +123,10 @@
 
 (put 'narrow-to-region 'disabled nil)
 (custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(cursor ((t nil))))
 
 
@@ -261,6 +262,8 @@
 (setq erc-autojoin-channels-alist
       '(("freenode.net" "#clojure")
         ("freenode.net" "#leiningen")
+        ("freenode.net" "#king_datascience")
+        ("freenode.net" "#king_danger")
         ;("aniverse.com" "#honobono")
         ))
 (defun erc-go ()

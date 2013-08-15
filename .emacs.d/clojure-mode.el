@@ -783,6 +783,7 @@ use (put-clojure-indent 'some-symbol 'defun)."
   (dotimes 1)
   (when-let 1)
   (if-let 1)
+  (cond-let 1)
 
   ;; data structures
   (defstruct 1)
