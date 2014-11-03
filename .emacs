@@ -42,6 +42,8 @@
 
 (require 'sql-indent)
 
+;; Delete trailing whitespace on saves.
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 (defun compact-uncompact-block ()
   "Remove or add line ending chars on current paragraph.
