@@ -78,15 +78,15 @@ alias upper-right-sixth  move screenSizeX*2/3;screenOriginY screenSizeX/3;screen
 # bind e:cmd hint ASDFGHJKLQWERTYUIOPCVBN
 
 # Numpad location Bindings
-bind pad1 ${lower-left-sixth}
-bind pad2 ${lower-middle-sixth}
-bind pad3 ${lower-right-sixth}
-bind pad4 ${left-third}
-bind pad5 ${middle-third}
-bind pad6 ${right-third}
-bind pad7 ${upper-left-sixth}
-bind pad8 ${upper-middle-sixth}
-bind pad9 ${upper-right-sixth}
+# bind pad1 ${lower-left-sixth}
+# bind pad2 ${lower-middle-sixth}
+# bind pad3 ${lower-right-sixth}
+# bind pad4 ${left-third}
+# bind pad5 ${middle-third}
+# bind pad6 ${right-third}
+# bind pad7 ${upper-left-sixth}
+# bind pad8 ${upper-middle-sixth}
+# bind pad9 ${upper-right-sixth}
 
 bind 1:ctrl;alt;cmd ${lower-left-sixth}
 bind 2:ctrl;alt;cmd ${lower-middle-sixth}
