@@ -1,3 +1,5 @@
+export UBER_HOME=~/Uber
+
 export PATH=/usr/local/bin:$PATH:$HOME/bin
 
 
