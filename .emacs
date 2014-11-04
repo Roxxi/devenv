@@ -1,5 +1,5 @@
 ;; this is where I add files for extra functionality
-(setq load-path (cons (expand-file-name "~/.emacs.d") load-path))
+(setq load-path (cons (expand-file-name "~/.emacs.d/*") load-path))
 (setq load-path (cons (expand-file-name "~/.emacs.d/danger-emacs") load-path))
 (require 'danger-core)
 
