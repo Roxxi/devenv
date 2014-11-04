@@ -1,9 +1,8 @@
-export UBER_HOME=~/Uber
-
 export PATH=/usr/local/bin:$PATH:$HOME/bin
 
 
-# Editor settings
+############################################################
+### Editor settings
 alias gemacs='/Applications/Emacs.app/Contents/MacOS/Emacs'
 alias gemacsclient='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient'
 
@@ -13,9 +12,9 @@ export EDITOR='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient'
 export ALTERNATE_EDITOR='/Applications/Emacs.app/Contents/MacOS/Emacs'
 export SVN_EDITOR='gemacsclient'
 
+############################################################
 #JCLASSLIB (doesn't launch in lion becuase the launcher is not a universal binary)
 alias jclasslib="java -jar /Applications/jclasslib\ bytecode\ viewer.app/Contents/Resources/app/bin/jclasslib.jar"
-
 
 ### ZSHELL Options ###
 export CLICOLOR=1
@@ -29,7 +28,7 @@ setopt nobeep
 setopt autolist
 setopt nohup
 #allow tab completion in the middle of a word
-setopt COMPLETE_IN_WORD
+setopt completeinword
 # enabling history file
 # number of lines kept in history
 export HISTSIZE=1000
