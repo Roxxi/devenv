@@ -9,7 +9,6 @@
 # Except #
 
 !.lein/**
-!.zsh.d/**
 !.emacs
 !.emacs.d/**
 !.gemrc
@@ -20,3 +19,4 @@
 !.slate
 !.travis.yml
 !.zshrc
+!.zsh.d/*
