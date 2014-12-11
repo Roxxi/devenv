@@ -8,14 +8,15 @@
 
 # Except #
 
-.lein/**
-.zsh.d/**
-.emacs
-.gemrc
-.gitattributes
-.gitignore
-.gitmodules
-.gitnotes.txt
-.slate
-.travis.yml
-.zshrc
+!.lein/**
+!.zsh.d/**
+!.emacs
+!.emacs.d/**
+!.gemrc
+!.gitattributes
+!.gitignore
+!.gitmodules
+!.gitnotes.txt
+!.slate
+!.travis.yml
+!.zshrc

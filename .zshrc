@@ -1,4 +1,4 @@
-export UBER_HOME=~/Uber
+
 
 export PATH=/usr/local/bin:$PATH:$HOME/bin
 
@@ -50,4 +50,4 @@ cd() {builtin cd "$@" && ls;}
 alias clean="rm -f *~; rm -f *.*~; rm -f *.tmp; rm -f *.pyc; rm -f *.o; rm -f *.class; ls"
 
 
-[[ -e /usr/local/bin/virtualenvwrapper.sh ]] && source /usr/local/bin/virtualenvwrapper.sh
+source ~/.zsh.d/uber.zsh
