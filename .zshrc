@@ -48,3 +48,6 @@ alias ls="gls --color=tty -BF ${LS_IGNORE}"
 cd() {builtin cd "$@" && ls;}
 #alias cd='cd $@; ls'
 alias clean="rm -f *~; rm -f *.*~; rm -f *.tmp; rm -f *.pyc; rm -f *.o; rm -f *.class; ls"
+
+
+[[ -e /usr/local/bin/virtualenvwrapper.sh ]] && source /usr/local/bin/virtualenvwrapper.sh
