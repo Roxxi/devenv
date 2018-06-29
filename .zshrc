@@ -1,6 +1,10 @@
-
-
 export PATH=/usr/local/bin:$PATH:$HOME/bin
+
+
+## For Emacs shell to get rid of ^[[?2004h (only when running zsh)
+if [[ $TERM = dumb ]]; then
+  unset zle_bracketed_paste
+fi
 
 
 ############################################################
