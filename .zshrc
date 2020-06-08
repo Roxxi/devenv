@@ -53,5 +53,11 @@ cd() {builtin cd "$@" && ls;}
 #alias cd='cd $@; ls'
 alias clean="rm -f *~; rm -f *.*~; rm -f *.tmp; rm -f *.pyc; rm -f *.o; rm -f *.class; ls"
 
+# SSH tunneling made simple
+ssh-tun() {
+	host=$1; shift
+	port=$1; shift
+	ssh -fN -L $port:localhost:$port $host
+}
 
 source ~/.zsh.d/uber.zsh
