@@ -26,7 +26,7 @@ alias jclasslib="java -jar /Applications/jclasslib\ bytecode\ viewer.app/Content
 export CLICOLOR=1
 export LSCOLORS=gxfxBxbxcxxxxxxxxx
 export PROMPT="[%n@%m %c] "
-export LS_IGNORE="--ignore='*.class' --ignore='*~' --ignore='#*#'"
+export LS_IGNORE=" --ignore='*~' --ignore='#*#'" #--ignore='*.class'
 
 setopt auto_cd
 setopt append_history
@@ -57,7 +57,13 @@ alias clean="rm -f *~; rm -f *.*~; rm -f *.tmp; rm -f *.pyc; rm -f *.o; rm -f *.
 ssh-tun() {
 	host=$1; shift
 	port=$1; shift
-	ssh -fN -L $port:localhost:$port $host
+	ssh -fN -L $port\:localhost:$port $host
 }
+
+#for emacs
+
+if [[ $TERM = dumb ]]; then
+  unset zle_bracketed_paste
+fi
 
 source ~/.zsh.d/uber.zsh

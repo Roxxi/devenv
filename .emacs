@@ -43,7 +43,8 @@
 (require 'sql-indent)
 
 ;; Delete trailing whitespace on saves.
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
+;; (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
 
 (defun compact-uncompact-block ()
   "Remove or add line ending chars on current paragraph.
@@ -73,3 +74,21 @@ When there is a text selection, act on the region."
             (fill-paragraph nil)) ) )
 
       (put this-command 'stateIsCompact-p (if currentStateIsCompact nil t)) ) ) )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Install cider
+(unless (package-installed-p 'cider)
+  (package-install 'cider))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(graphviz-dot-dot-program "/usr/local/bin/dot")
+ '(graphviz-dot-view-command "open -a /Applications/Graphviz.app %s"))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
