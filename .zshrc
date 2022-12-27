@@ -1,4 +1,4 @@
-export PATH=/usr/local/bin:$PATH:$HOME/bin
+export PATH=/opt/homebrew/bin:$PATH:$HOME/bin
 
 
 ## For Emacs shell to get rid of ^[[?2004h (only when running zsh)
